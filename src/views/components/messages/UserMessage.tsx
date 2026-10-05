@@ -22,11 +22,15 @@ function UserMessageBase({ message, isLastInGroup, actions }: MessageRowProps<Us
           isFailed && styles.bubbleFailed,
         ]}>
         {!!message.reply && (
-          <View style={styles.quote}>
-            <Text style={styles.quoteName} numberOfLines={1}>
+          <View style={[styles.quote, isFailed && styles.quoteFailed]}>
+            <Text
+              style={[styles.quoteName, isFailed && styles.quoteNameFailed]}
+              numberOfLines={1}>
               {message.reply.senderName}
             </Text>
-            <Text style={styles.quoteText} numberOfLines={2}>
+            <Text
+              style={[styles.quoteText, isFailed && styles.quoteTextFailed]}
+              numberOfLines={2}>
               {message.reply.text}
             </Text>
           </View>
@@ -99,6 +103,9 @@ const styles = StyleSheet.create({
   },
   quoteName: { ...typography.meta, color: colors.textOnGold, fontWeight: '700' },
   quoteText: { ...typography.meta, color: colors.textOnGold },
+  quoteFailed: { backgroundColor: colors.surfaceMuted },
+  quoteNameFailed: { color: colors.text },
+  quoteTextFailed: { color: colors.textSoft },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   meta: { ...typography.meta, color: colors.textMuted, fontSize: 11 },
   metaFailed: { ...typography.meta, color: colors.dangerText },
