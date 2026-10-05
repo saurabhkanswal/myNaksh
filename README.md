@@ -1,5 +1,7 @@
 # myNaksh
 
+![Android screenshot](docs/android.png)
+
 A chat screen for an astrology app, built with React Native. It looks and behaves
 like a messaging thread: you talk to an AI astrologer, a human astrologer can chime
 in, messages group by sender, and some AI replies carry recommendation cards
